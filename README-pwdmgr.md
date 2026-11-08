@@ -3,9 +3,9 @@
 上游：https://github.com/webview/webview_go
 基线：v0.0.0-20240831120633-6173450d4dd6（上游最新提交，2024-08-31）
 
-pwdmgr 项目通过 go.mod 的 replace 引用本仓库：
+pwdmgr 项目直接依赖本仓库，不再使用 replace：
 
-    replace github.com/webview/webview_go => github.com/yymm456/webview_go v0.0.1
+    require github.com/yymm456/webview_go v0.0.2
 
 ## 与上游的差异
 
@@ -20,5 +20,5 @@ pwdmgr 项目通过 go.mod 的 replace 引用本仓库：
 
 ## 维护
 
-改动代码后打新 tag，并更新 pwdmgr 项目 go.mod 中 replace 的版本号。
+改动代码后打新 tag，更新 pwdmgr 项目 go.mod 中的版本号并同步 go.sum 校验和。
 同步上游新版本时，覆盖代码后重做上述两处改动，再打新 tag。
